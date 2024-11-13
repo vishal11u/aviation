@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Job1 from "../../public/assets/logo/job1.png";
 import Job2 from "../../public/assets/logo/job2.png";
@@ -7,6 +7,7 @@ import Image from "next/image";
 
 const SalarySlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [numCards, setNumCards] = useState(1);
 
   const salaryData = [
     {
@@ -47,10 +48,23 @@ const SalarySlider = () => {
     );
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+      setNumCards(
+        window.innerWidth >= 1024 ? 3 : window.innerWidth >= 640 ? 2 : 1
+      );
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const visibleCards = () => {
     const cards = [];
-    const numCards =
-      window.innerWidth >= 1024 ? 3 : window.innerWidth >= 640 ? 2 : 1;
     for (let i = 0; i < numCards; i++) {
       const index = (currentIndex + i) % salaryData.length;
       cards.push(salaryData[index]);
