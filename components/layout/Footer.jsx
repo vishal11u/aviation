@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../public/assets/logo.png";
+import Logo from "../../public/assets/logo/footer.png";
 import Image from "next/image";
 
 const Footer = () => {
@@ -52,7 +52,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-12 gap-8">
           {/* Logo and Info Section */}
           <div className="col-span-1 md:col-span-4 lg:col-span-3">
-            <Image src={Logo} alt="KlickEdu Logo" className="mb-4 h-16" />
+            <Image
+              src={Logo}
+              alt="KlickEdu Logo"
+              className="mb-4 h-12 w-[80%]"
+            />
             <p className="text-sm mb-3">Student empowering platform</p>
             <p className="text-sm mb-6">
               Custom made education solutions for the New Generation

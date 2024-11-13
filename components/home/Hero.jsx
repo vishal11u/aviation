@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import PlainImage from "../../public/assets/plain.png";
+import PlainImage from "../../public/assets/banner/plane.jpg";
 import { ArrowRight, ChevronDown, Search } from "lucide-react";
 
 const topLinks = [
@@ -12,17 +12,17 @@ const topLinks = [
 
 function Hero() {
   return (
-    <div className="relative  w-full min-h-screen overflow-hidden">
+    <div className="relative w-full min-h-screen border overflow-hidden">
       <div className="absolute inset-0 ">
         <Image
           src={PlainImage}
           alt="plainImg"
-          className="object-cover w-full h-full"
+          className="object-cover lg:object-cover w-full h-full"
           priority
         />
       </div>
 
-      <div className="relative z-10 flex flex-col h-full px-4 pt-16 md:pt-32 md:px-12 lg:px-16">
+      <div className="relative z-10 flex flex-col h-full px-4 pt-48 md:px-12 lg:px-36">
         <div className="max-w-3xl">
           <p className="text-sm font-medium text-white md:text-base">
             Aviation In Abroad
@@ -31,14 +31,14 @@ function Hero() {
             Your Dream Fly Begins <br />
             Here
           </h1>
-          <p className="mt-2 text-sm font-semibold text-white md:text-base">
+          <p className="mt-2 text-sm font-semibold text-white md:text-sm">
             22k+ Student Onboarded
           </p>
 
           {/* Search Section */}
-          <div className="flex flex-col w-full mt-6 md:mt-8 md:flex-row md:max-w-2xl">
-            <div className="flex items-center flex-1 w-full bg-white rounded-t-md md:rounded-l-md md:rounded-tr-none px-2 py-2">
-              <div className="flex items-center flex-1 w-full gap-2 px-2">
+          <div className="flex flex-col w-full mt-6 md:mt-1 md:flex-row md:max-w-2xl rounded-md bg-white p-1">
+            <div className="flex items-center flex-1 w-full bg-white">
+              <div className="flex items-center flex-1 w-full gap-2 px-4">
                 <Search size={19} color="hotpink" />
                 <input
                   type="text"
@@ -55,14 +55,14 @@ function Hero() {
 
             <button
               type="button"
-              className="flex items-center justify-center w-full p-4 bg-[#fb4ca3] rounded-b-md md:w-auto md:rounded-r-md md:rounded-l-none md:rounded-b-md"
+              className="flex items-center justify-center py-3 px-5 bg-[#fb4ca3] rounded-md"
             >
               <ArrowRight size={20} color="white" />
             </button>
           </div>
 
           {/* Top Links Section */}
-          <div className="mt-6 md:mt-8">
+          <div className="mt-6 md:mt-6">
             <p className="mb-2 text-sm font-semibold text-white md:text-base">
               Top Link
             </p>

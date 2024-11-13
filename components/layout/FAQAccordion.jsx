@@ -36,9 +36,9 @@ function FAQAccordion() {
   return (
     <div className="w-full max-w-2xl mx-auto my-10 px-4 md:py-6 sm:px-6 lg:px-8">
       <h2 className="text-3xl font-bold text-center mb-6">FAQs</h2>
-      <div className="space-y-2">
+      <div className="space-y-2 w-full flex flex-col justify-center items-center">
         {faqData.map((faq, index) => (
-          <div key={index} className="bg-white rounded-lg border">
+          <div key={index} className="bg-white w-full md:w-[900px] rounded-lg border">
             <div
               className="flex justify-between items-center py-3 px-4 cursor-pointer"
               onClick={() => handleToggle(index)}

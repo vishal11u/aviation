@@ -1,35 +1,44 @@
 import React from "react";
 import { ArrowRight, ChevronRight } from "lucide-react";
 import Image from "next/image";
+import University1 from "../../public/assets/universities/uni1.jpg";
+import University1Logo from "../../public/assets/universities/uni1logo.png";
+import University2 from "../../public/assets/universities/uni2.jpeg";
+import University2Logo from "../../public/assets/universities/uni2logo.png";
+import University3 from "../../public/assets/universities/uni3.jpg";
+import University3Logo from "../../public/assets/universities/uni3logo.jpg";
 
 const UniversityCard = ({ name, location, image, logo, isActive = false }) => (
   <div
-    className={`min-w-[280px] bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 ${
+    className={`min-w-[250px] md:min-w-[280px] lg:min-w-[300px] bg-white rounded-xl overflow-hidden shadow-lg p-4 transition-all duration-300 ${
       isActive ? "border-2 border-pink-500" : ""
     }`}
   >
-    <div className="relative h-20 overflow-hidden">
+    <div className="relative h-24 rounded-md overflow-hidden">
       <Image src={image} alt={name} layout="fill" objectFit="cover" />
     </div>
-    <div className="p-4">
+    <div className="mt-3">
       <div className="h-12 w-10 mb-3">
         <Image
           src={logo}
           alt={`${name} logo`}
           layout="responsive"
+          className="rounded-md"
           width={100}
           height={100}
           objectFit="contain"
         />
       </div>
-      <h3 className="text-[20px] font-semibold text-navy-900">{name}</h3>
-      <p className="text-gray-500 text-sm mt-1">{location}</p>
-      <div className="mt-4 flex justify-end">
+      <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-navy-900 px-2">
+        {name}
+      </h3>
+      <p className="text-gray-500 font-medium pl-2 text-sm mt-1">{location}</p>
+      <div className="mt-0 flex justify-end">
         <ChevronRight
-          className={`w-6 h-6 ${
+          className={`w-8 h-8 ${
             isActive
-              ? "text-white border bg-pink-600 shadow-md rounded-md"
-              : "text-gray-400 border bg-gray-100 shadow-md rounded-md"
+              ? "text-white border bg-pink-600 rounded"
+              : "text-gray-400 border bg-gray-100 rounded"
           }`}
         />
       </div>
@@ -42,68 +51,49 @@ const AviationUniversities = () => {
     {
       name: "LeTourneau University",
       location: "United States",
-      image:
-        "https://mum.digitaluniversity.ac/user/pages/images/slides/slide1.jpg",
-      logo: "https://upload.wikimedia.org/wikipedia/en/7/7a/University_of_Mumbai_coat_of_arms.svg",
+      image: University1,
+      logo: University1Logo,
       isActive: true,
     },
     {
       name: "RMIT University",
       location: "United States",
-      image:
-        "https://content.jdmagicbox.com/comp/pune/m6/020pxx20.xx20.180626174530.c8m6/catalogue/dr-d-y-patil-international-university-pimpri-chinchwad-pune-wh1d8g8sif.jpg?clr=",
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUtg_lZYJiv63Ql0ZO2MHtoi4q_iQJ38l5Ig&s",
+      image: University2,
+      logo: University2Logo,
     },
     {
       name: "Lewis University",
       location: "United States",
-      image:
-        "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/1d/c1/e4/university-of-pune.jpg?w=1200&h=-1&s=1",
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtK2rF6_DBgZapj28X43c8bmBMpLYXITLhew&s",
-    },
-    {
-      name: "RMIT University",
-      location: "United States",
-      image:
-        "https://content.jdmagicbox.com/comp/pune/m6/020pxx20.xx20.180626174530.c8m6/catalogue/dr-d-y-patil-international-university-pimpri-chinchwad-pune-wh1d8g8sif.jpg?clr=",
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUtg_lZYJiv63Ql0ZO2MHtoi4q_iQJ38l5Ig&s",
+      image: University3,
+      logo: University3Logo,
     },
   ];
 
   return (
     <div className="h-full bg-gray-50 p-4 md:p-10">
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-8">
-          {/* Header Section */}
+      <div className="container mx-auto flex flex-col lg:flex-row lg:px-10 justify-evenly items-center lg:items-start space-y-6 lg:space-y-0 lg:space-x-8">
+        <div className="max-w-xl text-center lg:text-left">
           <div className="text-pink-500 text-sm font-medium mb-2">Courses</div>
-          <h1 className="text-3xl font-bold text-navy-900 mb-2">
-            Top Universities to Study Aviation Abroad
+          <h1 className="text-3xl sm:text-4xl lg:text-4xl font-bold text-navy-900 mb-2">
+            Top Universities to <br /> Study Aviation <br /> Abroad
           </h1>
-          <p className="text-gray-600 mb-4 max-w-2xl">
-            Aviation courses cover a wide range of areas, from piloting to
-            aircraft maintenance, air traffic control, and aviation management.
+          <p className="text-gray-500 text-sm lg:text-base font-medium mb-4 max-w-2xl">
+            Aviation courses cover a wide range of areas,
+            <br /> from piloting to aircraft maintenance, air <br /> traffic
+            control, and aviation management.
           </p>
         </div>
 
-        {/* Universities Slider */}
-        <div className="relative">
+        <div className="relative w-full lg:w-auto">
           <div className="flex gap-6 overflow-x-auto py-4 scroll-smooth no-scrollbar">
             {universities.map((university, index) => (
               <UniversityCard key={index} {...university} />
             ))}
           </div>
 
-          {/* Navigation Arrow */}
-          <button className="hidden md:block absolute right-14 top-1/2 -translate-y-1/2 bg-pink-500 shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors">
-            <ArrowRight size={20} className="w-6 h-6 text-white" />
-          </button>
-        </div>
-
-        {/* Explore Button */}
-        <div className="mt-8 flex justify-center md:justify-start">
-          <button className="inline-flex items-center gap-2 bg-pink-50 text-pink-500 px-4 py-2 rounded-lg hover:bg-pink-100 transition-colors">
-            Let&apos;s Explore
-            <ArrowRight className="w-4 h-4" />
+          {/* Scroll Button for Larger Screens */}
+          <button className="hidden md:block absolute -right-7 top-1/2 border -translate-y-1/2 bg-white shadow-lg rounded-full p-3 hover:bg-gray-300 transition-colors">
+            <ArrowRight size={20} className="w-8 h-8 text-pink-500" />
           </button>
         </div>
       </div>

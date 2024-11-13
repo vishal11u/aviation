@@ -57,7 +57,7 @@ const AviationAdmissionGuide = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white p-4 md:p-8">
+    <div className="min-h-screen bg-white p-4 md:px-8 md:py-14">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="mb-12">
@@ -111,7 +111,7 @@ const AviationAdmissionGuide = () => {
               Document Requirements for Aviation Courses
               <div className="absolute -bottom-2 left-0 w-full h-1 bg-pink-500 rounded"></div>
             </h2>
-            <div className="text-gray-600 border-b-2">
+            <div className="text-gray-800">
               <span className="font-semibold text-black">4</span> out of{" "}
               <span className="font-semibold text-black">7</span>
             </div>
@@ -132,13 +132,12 @@ const AviationAdmissionGuide = () => {
                 <p className="text-sm text-gray-600">{doc.description}</p>
               </div>
             ))}
-          </div>
-
-          {/* Navigation Arrow */}
-          <div className="flex justify-end mt-6">
-            <button className="p-2 rounded-full bg-pink-500 shadow-lg hover:bg-gray-50 transition-colors">
-              <ArrowRight className="w-7 h-7 text-white" />
-            </button>
+            {/* Navigation Arrow */}
+            <div className="md:flex hidden absolute right-24 justify-end mt-6">
+              <button className="p-2 rounded-full mt-11 border bg-white shadow-lg hover:bg-gray-300 transition-colors">
+                <ArrowRight className="w-8 h-8 text-pink-500" />
+              </button>
+            </div>
           </div>
         </div>
       </div>

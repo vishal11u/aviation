@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { Menu, X, Search, User } from "lucide-react";
-import Logo from "../../public/assets/logo.png";
+import Logo from "../../public/assets/logo/logo.png";
 
 const topMenus = [
   { id: 1, title: "Menu Item 01" },
@@ -37,7 +37,7 @@ function Header() {
           </div>
 
           {/* Right Section */}
-          <div className="hidden md:flex items-center gap-4 border-l-2 pl-2">
+          <div className="hidden md:flex items-center gap-4 lg:gap-x-8 border-l-2 pl-2">
             <button className="p-2 hover:bg-gray-100 rounded-full">
               <Search className="w-5 h-5" />
             </button>
