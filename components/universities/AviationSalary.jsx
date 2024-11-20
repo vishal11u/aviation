@@ -1,40 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import Job1 from "../../public/assets/logo/job1.png";
-import Job2 from "../../public/assets/logo/job2.png";
 import Image from "next/image";
+import { salaryData } from "@/data/data";
 
 const SalarySlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [numCards, setNumCards] = useState(1);
-
-  const salaryData = [
-    {
-      title: "Commercial",
-      role: "Pilot",
-      averageSalary: "120,000",
-      icon: Job1,
-    },
-    {
-      title: "Air Traffic",
-      role: "Controller",
-      averageSalary: "110,000",
-      icon: Job2,
-    },
-    {
-      title: "Aircraft",
-      role: "Mechanic",
-      averageSalary: "60,000",
-      icon: Job1,
-    },
-    {
-      title: "Aircraft",
-      role: "Manager",
-      averageSalary: "80,000",
-      icon: Job1,
-    },
-  ];
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
@@ -73,19 +45,19 @@ const SalarySlider = () => {
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-4 py-8 md:py-12">
+    <div className="w-full max-w-[80%] mx-auto px-4 py-8 md:py-12">
       <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-6 md:gap-12">
         {/* Left Content Section */}
         <div className="md:w-1/3">
           <span className="text-pink-500 text-sm font-medium mb-2 block">
             Courses Salary
           </span>
-          <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-4">
-            Aviation Course Salary
+          <h2 className="text-2xl md:text-[36px] font-bold text-navy-900 mb-4">
+            Aviation Course <br /> Salary
           </h2>
           <p className="text-gray-500 text-sm">
-            Salaries in the aviation field can vary widely depending on the
-            role, experience, location, and specific employer
+            Salaries in the aviation field can vary widely <br /> depending on
+            the role, experience, location, <br /> and specific employer
           </p>
 
           {/* Navigation Arrows for Mobile */}
@@ -130,11 +102,11 @@ const SalarySlider = () => {
                 className={`flex flex-col p-6 rounded-xl border transition-all duration-300
                   ${
                     index === 0
-                      ? "bg-pin-50 border-pink-100"
-                      : "bg-white hover:bg-gray-50 border-gray-100"
+                      ? "rounded-[19px] border-2 border-[#4A1F40] bg-white shadow-[0_4px_15px_4px_rgba(138,63,150,0.10)]"
+                      : "bg-white hover:bg-gray-50 border-gray-100 "
                   }`}
               >
-                <div className="flex flex-col items-center text-center">
+                <div className="flex flex-col ">
                   <div className="w-16 h-16 bg-gray-100 rounded-full mb-4 flex items-center justify-center">
                     <Image
                       src={item.icon}
@@ -142,11 +114,11 @@ const SalarySlider = () => {
                       className="w-16 h-16"
                     />
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900">
+                  <h3 className="text-[25px] font-semibold text-gray-900">
                     {item.title}
                   </h3>
                   <p className="text-gray-500 mb-4">{item.role}</p>
-                  <div className="border-t-2 border-dashed w-full pt-4">
+                  <div className="border-t-2 border-[#1D1C42] w-full pt-4">
                     <p className="text-gray-500 text-sm mb-1">
                       Average Salary ($)
                     </p>

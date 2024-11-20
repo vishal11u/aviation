@@ -1,33 +1,11 @@
-'use client'
+"use client";
 import { useState } from "react";
-import { ChevronRight, Star } from "lucide-react";
+import { ChevronRight, Sparkle } from "lucide-react";
+import { faqData } from "@/data/data";
 
-const faqData = [
-  {
-    question: "Why choose aviation as a career?",
-    answer:
-      "Aviation offers exciting job opportunities, high salaries, and a chance to travel.",
-  },
-  {
-    question: "What aviation courses are available abroad?",
-    answer: "",
-  },
-  {
-    question: "Which are the best countries to study aviation?",
-    answer: "",
-  },
-  {
-    question: "Can I work abroad after completing my aviation studies?",
-    answer: "",
-  },
-  {
-    question: "What is the duration of aviation courses abroad?",
-    answer: "",
-  },
-];
 
 function FAQAccordion() {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState(0);
 
   const handleToggle = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -38,15 +16,19 @@ function FAQAccordion() {
       <h2 className="text-3xl font-bold text-center mb-6">FAQs</h2>
       <div className="space-y-2 w-full flex flex-col justify-center items-center">
         {faqData.map((faq, index) => (
-          <div key={index} className="bg-white w-full md:w-[900px] rounded-lg border">
+          <div
+            key={index}
+            className="bg-white w-full md:w-[900px] rounded-lg border"
+          >
             <div
               className="flex justify-between items-center py-3 px-4 cursor-pointer"
               onClick={() => handleToggle(index)}
             >
               <div className="flex items-center gap-2">
-                {/* Star icon at the start */}
-                <Star size={20} className="text-yellow-400" />
-                <span className="font-semibold text-lg">{faq.question}</span>
+                <Sparkle className="text-yellow-400" />
+                <span className="font-semibold text-[16px]">
+                  {faq.question}
+                </span>
               </div>
               <ChevronRight
                 size={20}
@@ -56,8 +38,8 @@ function FAQAccordion() {
               />
             </div>
             {openIndex === index && (
-              <div className="bg-gray-100 px-4 py-2 border-t rounded-b-lg">
-                <p>{faq.answer}</p>
+              <div className="px-4 py-2 rounded-b-lg">
+                <p className="text-[12px]">{faq.answer}</p>
               </div>
             )}
           </div>

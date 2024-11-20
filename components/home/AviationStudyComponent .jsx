@@ -2,37 +2,11 @@
 import React, { useState } from "react";
 import { ChevronRight, MapPin } from "lucide-react";
 import Image from "next/image";
-import Earth from "../../public/assets/banner/location.jpg";
+import Earth from "../../public/assets/banner/location.svg";
+import { regions } from "@/data/data";
 
 const AviationStudyComponent = () => {
   const [selectedRegion, setSelectedRegion] = useState("North America");
-
-  const regions = [
-    {
-      name: "North America",
-      countries: ["United States", "Canada"],
-      universities: [
-        {
-          name: "Embry-Riddle Aeronautical University",
-          description:
-            "Known for aviation management, aeronautics, and pilot training.",
-          location: "United States",
-          lat: 29.1905,
-          lon: -81.0481,
-        },
-        {
-          name: "Purdue University",
-          description: "Offers Aerospace Engineering and Aviation Management",
-          location: "United States",
-          lat: 40.4237,
-          lon: -86.9212,
-        },
-      ],
-    },
-    { name: "Australia", countries: ["Australia"] },
-    { name: "UAE", countries: ["United Arab Emirates"] },
-    { name: "South Africa", countries: ["South Africa"] },
-  ];
 
   return (
     <div className="relative w-full min-h-screen overflow-hidden">
@@ -80,20 +54,24 @@ const AviationStudyComponent = () => {
             </div>
 
             <div className="space-y-4 pl-6 md:pl-6">
-              {regions.map((region) => (
+              {regions.map((region, i) => (
                 <div
                   key={region.name}
                   className={`transition-all duration-300 ${
                     selectedRegion === region.name
-                      ? "bg-[#ffffff25] rounded border-2 border-gray-400 p-4"
-                      : "p-4 opacity-60 bg-[#ffffff25] rounded"
+                      ? "bg-[#ffffff25] rounded p-4"
+                      : "p-4 opacity-60 bg-[#ffffff0d] rounded"
                   }`}
                 >
                   <button
                     onClick={() => setSelectedRegion(region.name)}
                     className="w-full text-left"
                   >
-                    <span className="text-xl font-semibold text-white">
+                    <span
+                      className={`${
+                        i === 0 ? "text-[25px]" : "text-[20px]"
+                      } font-semibold text-white`}
+                    >
                       {region.name}
                     </span>
                     {region.countries.map((country) => (
@@ -101,7 +79,7 @@ const AviationStudyComponent = () => {
                         key={country}
                         className={`text-sm mt-1 ${
                           selectedRegion === region.name
-                            ? "text-gray-300 "
+                            ? "text-gray-100 text-[16px]"
                             : "text-gray-400 hidden"
                         }`}
                       >
@@ -115,23 +93,23 @@ const AviationStudyComponent = () => {
           </div>
 
           <div className="w-full md:w-2/3 lg:w-1/4">
-            <div className="bg-[#ffffff16] border border-gray-400 rounded-md p-4 md:py-8">
-              <h2 className="text-xl mb-1 font-semibold text-white">
+            <div className="bg-[#ffffff16] rounded-md p-4 md:py-8">
+              <h2 className="text-[18px] mb-1 font-medium text-white">
                 {selectedRegion}
               </h2>
               {regions
                 .find((r) => r.name === selectedRegion)
                 ?.universities?.map((uni) => (
                   <div key={uni.name} className="mb-8">
-                    <div className="flex items-start gap-3">
+                    <div className="flex items-start gap-4">
                       <div className="mt-1">
                         <MapPin className="w-5 h-5 text-pink-500" />
                       </div>
                       <div>
-                        <h3 className="font-medium text-lg text-white">
+                        <h3 className="font-medium text-[15px] text-white">
                           {uni.name}
                         </h3>
-                        <p className="text-sm text-gray-400 mt-1">
+                        <p className="text-[14px] text-gray-400 mt-1">
                           {uni.description}
                         </p>
                       </div>

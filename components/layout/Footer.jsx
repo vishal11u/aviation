@@ -1,205 +1,122 @@
 import React from "react";
-import Logo from "../../public/assets/logo/footer.png";
 import Image from "next/image";
+import FooterImg from "../../public/assets/banner/footer.svg";
+import {
+  masterPrograms,
+  studyAbroadBlogs,
+  supportLinks,
+  topDestinations,
+} from "@/data/data";
 
 const Footer = () => {
-  const footerSections = {
-    mba: {
-      title: "MBA",
-      links: ["MBA", "Top MBA College", "MBA Exam", "MBA College Predictor"],
-    },
-    engineering: {
-      title: "Engineering",
-      links: [
-        "Engineering",
-        "Top Engineering Colleges",
-        "Engineering Exam",
-        "Engineering College Predictor",
-      ],
-    },
-    medicine: {
-      title: "Medicine",
-      links: [
-        "Medicine",
-        "Top Medicine Colleges",
-        "Medicine Exam",
-        "Medicine College Predictor",
-      ],
-    },
-    resources: {
-      title: "Resources",
-      links: [
-        "Career after 12th",
-        "Ask a Question",
-        "Articles",
-        "News",
-        "Trends",
-      ],
-    },
-    updates: {
-      title: "Important Updates",
-      links: ["NEET 2023", "CAT 2024"],
-    },
-    abroad: {
-      title: "Study Abroad",
-      links: ["UK", "USA", "Australia"],
-    },
-  };
-
   return (
-    <footer className="bg-gradient-to-r from-slate-900 to-slate-700 text-gray-300 py-16">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-12 gap-8">
-          {/* Logo and Info Section */}
-          <div className="col-span-1 md:col-span-4 lg:col-span-3">
+    <footer className="bg-[#1F1B2E] text-gray-300 py-16 relative">
+      <div className="absolute inset-0">
+        <Image
+          src={FooterImg}
+          alt="plainImg"
+          className="object-cover w-full h-full"
+          priority
+        />
+      </div>
+      <div className="max-w-7xl mx-auto px-4 relative">
+        {/* Top Section */}
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-12 gap-y-8">
+          {/* Company Info */}
+          <div>
             <Image
-              src={Logo}
+              src="/assets/logo/footer.png"
               alt="KlickEdu Logo"
-              className="mb-4 h-12 w-[80%]"
+              width={157}
+              height={40}
+              className="mb-4"
             />
-            <p className="text-sm mb-3">Student empowering platform</p>
-            <p className="text-sm mb-6">
+            <p className="text-sm text-gray-400 mb-2">
+              Student empowering platform
+            </p>
+            <p className="text-sm text-gray-400 mb-4">
               Custom made education solutions for the New Generation
             </p>
-            <p className="text-xl font-semibold">8111996000</p>
+            <p className="text-xl font-medium text-white">8111996000</p>
           </div>
 
-          {/* Main Links Sections */}
-          <div className="col-span-1 md:col-span-4 lg:col-span-9 grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* First Column */}
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-white font-medium mb-4">
-                  {footerSections.mba.title}
-                </h3>
-                <ul className="space-y-3">
-                  {footerSections.mba.links.map((link) => (
-                    <li key={link}>
-                      <a
-                        href="#"
-                        className="text-gray-400 hover:text-white text-sm"
-                      >
-                        {link}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-white font-medium mb-4">
-                  {footerSections.resources.title}
-                </h3>
-                <ul className="space-y-3">
-                  {footerSections.resources.links.map((link) => (
-                    <li key={link}>
-                      <a
-                        href="#"
-                        className="text-gray-400 hover:text-white text-sm"
-                      >
-                        {link}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+          {/* Support Links */}
+          <div>
+            <h3 className="text-lg font-medium text-white mb-4">Support</h3>
+            <ul className="space-y-2">
+              {supportLinks.map((link) => (
+                <li key={link}>
+                  <a
+                    href="#"
+                    className="text-[13px] text-gray-400 hover:text-white transition-colors"
+                  >
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-            {/* Second Column */}
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-white font-medium mb-4">
-                  {footerSections.engineering.title}
-                </h3>
-                <ul className="space-y-3">
-                  {footerSections.engineering.links.map((link) => (
-                    <li key={link}>
-                      <a
-                        href="#"
-                        className="text-gray-400 hover:text-white text-sm"
-                      >
-                        {link}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-white font-medium mb-4">
-                  {footerSections.updates.title}
-                </h3>
-                <ul className="space-y-3">
-                  {footerSections.updates.links.map((link) => (
-                    <li key={link}>
-                      <a
-                        href="#"
-                        className="text-gray-400 hover:text-white text-sm"
-                      >
-                        {link}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+          {/* Top Destination */}
+          <div>
+            <h3 className="text-lg font-medium text-white mb-4">
+              Top Destination
+            </h3>
+            <a
+              href="https://klick-edu-web.vercel.app/"
+              className="text-lg font-medium text-white"
+            >
+              Aviation
+            </a>
+            <ul className="space-y-2">
+              {topDestinations.map((destination) => (
+                <li key={destination}>
+                  <a
+                    href="#"
+                    className="text-[13px] text-gray-400 hover:text-white transition-colors"
+                  >
+                    {destination}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-            {/* Third Column */}
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-white font-medium mb-4">
-                  {footerSections.medicine.title}
-                </h3>
-                <ul className="space-y-3">
-                  {footerSections.medicine.links.map((link) => (
-                    <li key={link}>
-                      <a
-                        href="#"
-                        className="text-gray-400 hover:text-white text-sm"
-                      >
-                        {link}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-white font-medium mb-4">
-                  {footerSections.abroad.title}
-                </h3>
-                <ul className="space-y-3">
-                  {footerSections.abroad.links.map((link) => (
-                    <li key={link}>
-                      <a
-                        href="#"
-                        className="text-gray-400 hover:text-white text-sm"
-                      >
-                        {link}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+          {/* Master Programs */}
+          <div>
+            <h3 className="text-lg font-medium text-white mb-4">
+              Master Programs
+            </h3>
+            <ul className="space-y-2">
+              {masterPrograms.map((program) => (
+                <li key={program}>
+                  <a
+                    href="#"
+                    className="text-[13px] text-gray-400 hover:text-white transition-colors"
+                  >
+                    {program}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
-        {/* Bottom Links */}
-        <div className="mt-16 pt-8 border-t border-gray-700">
-          <div className="flex flex-wrap gap-6">
-            <a href="/about" className="text-gray-400 hover:text-white text-sm">
-              About
-            </a>
-            <a href="/faqs" className="text-gray-400 hover:text-white text-sm">
-              FAQs
-            </a>
-            <a href="/terms" className="text-gray-400 hover:text-white text-sm">
-              Terms & Condition
-            </a>
-            <a
-              href="/privacy"
-              className="text-gray-400 hover:text-white text-sm"
-            >
-              Privacy Policy
-            </a>
+        {/* Study Abroad Blogs */}
+        <div className="mt-12 pt-8 border-t border-gray-700">
+          <h3 className="text-lg font-medium text-white mb-4">
+            Study Abroad Important Blogs
+          </h3>
+          <div className="flex flex-wrap gap-2">
+            {studyAbroadBlogs.map((blog) => (
+              <a
+                key={blog}
+                href="#"
+                className="text-[13px] text-gray-400 hover:text-white transition-colors"
+              >
+                {blog} |
+              </a>
+            ))}
           </div>
         </div>
       </div>
