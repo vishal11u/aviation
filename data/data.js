@@ -14,28 +14,97 @@ export const topMenus = [
   { id: 4, title: "More" },
 ];
 
-export const courses = {
-  license: {
-    title: "License",
+export const courses = [
+  {
     category: "12 with PCM",
-    items: ["Pilot Training", "Aircraft Maintenance Engineering"],
+    license: {
+      title: "License",
+      items: [
+        "Pilot Training",
+        "Aircraft Maintenance Engineering",
+        "Aircraft Maintenance Engineering",
+      ],
+    },
+    graduation: {
+      title: "Graduation",
+      items: [
+        "BBA in Aviation",
+        "B.Sc Aeronautical",
+        "B.Sc in Aviation",
+        "B.sc in AME",
+      ],
+    },
+    diploma: {
+      title: "Diploma",
+      items: [
+        "Aeronautical Engineering",
+        "Aerospace Engineering",
+        "Aeronautical Engineering",
+      ],
+    },
+    certification: {
+      title: "Certification",
+      items: ["Cabin Crew", "Airport Management", "Airport Ground Staff"],
+    },
+    engineering: {
+      title: "Engineering",
+      items: ["Cabin Crew", "Airport Management", "Airport Ground Staff"],
+    },
   },
-  graduation: {
-    title: "Graduation",
-    category: "12 with PCM",
-    items: ["BBA in Aviation", "B.Sc Aeronautical", "B.Sc in Aviation"],
+  {
+    category: "12 With Non-PCM",
+    license: {
+      title: "License",
+      items: ["Aircraft Maintenance Engineering (EASA)"],
+    },
+    graduation: {
+      title: "Graduation",
+      items: ["BBA in Aviation"],
+    },
+    diploma: {
+      title: "Diploma",
+      items: [
+        "Aircraft Maintenance Engineering",
+        "Aeronautical Engineering",
+        "Aerospace Engineering",
+      ],
+    },
+    cert: {
+      title: "Cert",
+      items: ["Cabin Crew", "Airport Management", "Airport Ground Staff"],
+    },
   },
-  diploma: {
-    title: "Diploma",
-    category: "12 with PCM",
-    items: ["Aeronautical Engineering", "Aerospace Engineering"],
+  {
+    category: "Diploma",
+    license: {
+      title: "License",
+      items: [
+        "Pilot",
+        "Aircraft Maintenance Engineering",
+        "Aircraft Maintenance Engineering(EASA)",
+      ],
+    },
+    engineering: {
+      title: "Engineering",
+      items: ["Aeronautical Engineering", "Aerospace Engineering"],
+    },
   },
-  cert: {
-    title: "Cert",
-    category: "12 with PCM",
-    items: ["Cabin Cr", "Airport Man"],
+  {
+    category: "10th",
+    license: {
+      title: "License",
+      items: ["Aircraft Maintenance Engineering(EASA)"],
+    },
+    diploma: {
+      title: "Diploma",
+      items: [
+        "Aircraft Maintenance Engineering",
+        "Aeronautical Engineering",
+        "Aerospace Engineering",
+      ],
+    },
   },
-};
+];
 
 export const categories = ["12 with PCM", "12 With Non-PCM", "Diploma", "10th"];
 
@@ -69,22 +138,30 @@ export const aviationCourse = [
 export const aviationTypeCourse = [
   {
     id: 1,
-    title: "Bachelor",
+    title: "Bachelor’s Courses in Aviation",
     description:
-      "Commerical Pilot License\n Pilot Training Programs\nCabin Crew Training",
+      "Commerical Pilot License\n Pilot Training Programs\nCabin Crew Training\nBachelor of Science (BSc) in Aviation\nBachelor of Business Administration (BBA) in Aviation Management\nBachelor of Science in Aeronautical Engineering\nBachelor of Science in Air Traffic Management\nBachelor of Science in Aviation Maintenance Technology\nBachelor of Science in Airport and Airline Management",
     isActive: false,
   },
   {
     id: 2,
-    title: "Master",
+    title: "Master’s Courses in Aviation",
     description:
-      "Bachelor's in Aviation Management\nB.Tech in Aerospace Engineering",
+      "Master of Science in Aviation Management\nMBA in Aviation\nMaster of Science in Aeronautics and Aerospace Engineering\nMaster of Science in Air Transport Management\nMaster of Science in Aviation Safety\nMaster of Science in Airport Management",
     isActive: true,
   },
   {
     id: 3,
-    title: "Diploma & Ce...",
-    description: "Master's in Aviation Management",
+    title: "Diploma Courses in Aviation",
+    description:
+      "Diploma in Aviation Management\nDiploma in Aircraft Maintenance Engineering\nDiploma in Air Hostess Training\nDiploma in Air Traffic Control\nDiploma in Airport Ground Services\nDiploma in Pilot Training (Commercial or Private Pilot)",
+    isActive: false,
+  },
+  {
+    id: 4,
+    title: "Certificate Courses in Aviation",
+    description:
+      "Certificate in Airline and Airport Ground Services\nCertificate in Aviation Safety\nCertificate in Air Traffic Control\nDiploma in Air Traffic Control\nCertificate in Flight Attendant Training\nCertificate in Aviation Security\nPrivate Pilot License (PPL) Certificate\nCommercial Pilot License (CPL) Certificate\nAircraft Maintenance Certification (AMT)",
     isActive: false,
   },
 ];

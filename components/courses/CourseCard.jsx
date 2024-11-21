@@ -43,7 +43,7 @@ const CourseCard = () => {
         aviationCourse.length - 3
       );
       setCourseScrollIndex(newIndex);
-      const scrollAmount = newIndex * 261; 
+      const scrollAmount = newIndex * 261;
       aviationCourseRef.current.scrollTo({
         left: scrollAmount,
         behavior: "smooth",
@@ -55,7 +55,7 @@ const CourseCard = () => {
     if (aviationCourseRef.current) {
       const newIndex = Math.max(courseScrollIndex - 1, 0);
       setCourseScrollIndex(newIndex);
-      const scrollAmount = newIndex * 261; 
+      const scrollAmount = newIndex * 261;
       aviationCourseRef.current.scrollTo({
         left: scrollAmount,
         behavior: "smooth",
@@ -70,7 +70,7 @@ const CourseCard = () => {
         aviationTypeCourse.length - 2
       );
       setTypeScrollIndex(newIndex);
-      const scrollAmount = newIndex * 354; 
+      const scrollAmount = newIndex * 354;
       aviationTypeCourseRef.current.scrollTo({
         left: scrollAmount,
         behavior: "smooth",
@@ -82,7 +82,7 @@ const CourseCard = () => {
     if (aviationTypeCourseRef.current) {
       const newIndex = Math.max(typeScrollIndex - 1, 0);
       setTypeScrollIndex(newIndex);
-      const scrollAmount = newIndex * 354; 
+      const scrollAmount = newIndex * 354;
       aviationTypeCourseRef.current.scrollTo({
         left: scrollAmount,
         behavior: "smooth",
@@ -121,7 +121,7 @@ const CourseCard = () => {
         <div className="relative">
           <div
             ref={aviationCourseRef}
-            className="grid grid-cols-1 lg:grid-cols-4 gap-5 md:gap-36 -2 md:max-w-3xl overflow-y-auto no-scrollbar bg-gray-50"
+            className="grid grid-cols-1 lg:grid-cols-4 gap-5 md:gap-36 pb-2 md:max-w-3xl overflow-y-auto no-scrollbar bg-gray-50"
             style={{
               scrollSnapType: "x mandatory",
               scrollBehavior: "smooth",
@@ -183,7 +183,7 @@ const CourseCard = () => {
         <div className="flex flex-col lg:flex-row items-start justify-between gap-8">
           {/* Left Content */}
           <div className="space-y-4 lg:w-1/2">
-            <p className="text-pink-500 font-semibold text-sm">Courses</p>
+            <p className="text-[#D4619E] font-medium text-[16px]">Courses</p>
             <h2 className="text-[24px] md:text-[36px] font-semibold text-[#1D1C42]">
               Types of Aviation <br /> Courses
             </h2>
@@ -215,30 +215,30 @@ const CourseCard = () => {
                 <div
                   key={type.id}
                   onClick={() => handleTypeClick(type)}
-                  className={`cursor-pointer bg-white rounded-2xl h-[183px] w-[354px] p-5 shadow-lg flex-shrink-0 scroll-snap-align-start
+                  className={`cursor-pointer bg-white rounded-2xl h-[300px] overflow-hidden  w-[354px] p-4 shadow-lg flex-shrink-0 scroll-snap-align-start
                     ${
                       activeAviationType === type.id
-                        ? "border border-gray-300 shadow-lg"
+                        ? "border-2 border-gray-300 shadow-lg"
                         : "opacity-50"
                     } `}
                 >
-                  <div className="space-y-4">
+                  <div className="space-y-2">
                     <div className="border-b-2">
-                      <h3 className="text-[22px] font-semibold text-[#000000] pb-1">
+                      <h3 className="text-[20px] font-semibold text-[#000000] pb-1">
                         {type.title}
                       </h3>
                     </div>
-                    <div className="text-sm h-7 whitespace-pre-wrap">
+                    <div className="text-sm whitespace-pre-wrap h-[225px] overflow-x-auto no-scrollbar">
                       {type.description.split("\n").map((line, idx) => (
                         <p
                           key={idx}
                           className={`${
                             idx === 0 && activeAviationType === type.id
-                              ? "text-black font-semibold"
-                              : "text-gray-500 pt-2"
+                              ? "text-gray-800 font-medium"
+                              : "text-gray-800 pt-2"
                           }`}
                         >
-                          {line}
+                          • {line}
                         </p>
                       ))}
                     </div>
